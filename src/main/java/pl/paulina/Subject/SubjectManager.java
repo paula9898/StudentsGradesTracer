@@ -17,6 +17,11 @@ public class SubjectManager {
 
     }
 
+    public void addSubject(Subject subject)
+    {
+        subjects.add(subject);
+    }
+
     public ArrayList<String> showAllSubjects()
     {
 
@@ -25,12 +30,8 @@ public class SubjectManager {
             subjectsNames.add(subjects.get(i).getName());
 
         }
-
         return subjectsNames;
 
     }
-
-
-
 
 }
