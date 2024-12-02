@@ -12,7 +12,6 @@ public class SubjectManager {
     {
         String id = UUID.randomUUID().toString();
         Subject subject = new Subject(id, name, teacher, lernFeld);
-
         subjects.add(subject);
 
         return subject;
@@ -35,5 +34,7 @@ public class SubjectManager {
         return subjectsNames;
 
     }
+
+
 
 }
