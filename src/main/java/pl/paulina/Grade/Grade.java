@@ -1,4 +1,4 @@
-package pl.paulina.Subject;
+package pl.paulina.Grade;
 
 import java.util.Date;
 
