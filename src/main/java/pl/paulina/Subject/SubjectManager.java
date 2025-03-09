@@ -1,5 +1,8 @@
 package pl.paulina.Subject;
 
+import pl.paulina.Grade.Grade;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -7,6 +10,8 @@ public class SubjectManager {
 
     private ArrayList<Subject> subjects = new ArrayList<>();
     ArrayList<String> subjectsNames = new ArrayList<>();
+    ArrayList<Subject> subjectsDetails = new ArrayList<>();
+    ArrayList<Double> subjectsGrades = new ArrayList<>();
 
     public Subject addSubject(String name, String teacher, String lernFeld)
     {
@@ -33,6 +38,49 @@ public class SubjectManager {
         }
         return subjectsNames;
 
+    }
+
+    public Subject showSubjectDetailsBySubjectName(String subjectName)
+    {
+        for (Subject subject : subjects)
+        {
+            if(subjectName.equals(subject.getName())) {
+                return subject;
+            }
+        }
+
+        return null;
+    }
+
+    public Subject chooseSubject(String name)
+    {
+        for (Subject subject :  subjects) {
+            if ( name.equals(subject.getName())) {
+                return subject;
+            }
+        }
+        return null;
+    }
+
+    public void addGradeForSpecificSubject(String name, Double score) {
+
+        Subject chosenSubject = chooseSubject(name);
+
+        chosenSubject.grades.add(score);
+
+    }
+
+    public ArrayList<Double> displayGradesForASubject(String subjectName) {
+
+        ArrayList<Double> gradesList =  new ArrayList<>();
+
+        for ( Subject subject : subjects )
+        {
+            if(subject.getName().equals(subjectName)){
+                return subject.grades;
+            }
+        }
+        return null;
     }
 
 }
