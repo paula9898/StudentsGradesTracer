@@ -1,7 +1,6 @@
 package pl.paulina.Subject;
 
 import pl.paulina.Grade.Grade;
-
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.UUID;
@@ -11,7 +10,7 @@ public class SubjectManager {
     private ArrayList<Subject> subjects = new ArrayList<>();
     ArrayList<String> subjectsNames = new ArrayList<>();
     ArrayList<Subject> subjectsDetails = new ArrayList<>();
-    ArrayList<Double> subjectsGrades = new ArrayList<>();
+    ArrayList<Integer> subjectsGrades = new ArrayList<>();
 
     public Subject addSubject(String name, String teacher, String lernFeld)
     {
@@ -48,7 +47,6 @@ public class SubjectManager {
                 return subject;
             }
         }
-
         return null;
     }
 
@@ -62,7 +60,7 @@ public class SubjectManager {
         return null;
     }
 
-    public void addGradeForSpecificSubject(String name, Double score) {
+    public void addGradeForSubject(String name, Integer score) {
 
         Subject chosenSubject = chooseSubject(name);
 
@@ -70,9 +68,9 @@ public class SubjectManager {
 
     }
 
-    public ArrayList<Double> displayGradesForASubject(String subjectName) {
+    public ArrayList<Integer> displayGradesForASubject(String subjectName) {
 
-        ArrayList<Double> gradesList =  new ArrayList<>();
+        ArrayList<Integer> gradesList =  new ArrayList<>();
 
         for ( Subject subject : subjects )
         {
@@ -81,6 +79,24 @@ public class SubjectManager {
             }
         }
         return null;
+    }
+
+    public double calculateAverage(String subjectName) {
+
+        double result = 0;
+
+        ArrayList<Integer> grades;
+
+        grades = displayGradesForASubject(subjectName);
+
+        long amountOfGrades = grades.stream().count();
+
+        Integer sum = grades.stream()
+                .reduce(0, Integer::sum);
+
+
+        return ((double)sum / amountOfGrades);
+
     }
 
 }

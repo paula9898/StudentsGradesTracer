@@ -14,29 +14,13 @@ public class Main {
 
         SubjectManager subjectManager = new SubjectManager();
 
-        subjectManager.addSubject("Networking","Herr Doktor Bishof", "LF5");
-
+        subjectManager.addSubject("Networking", "Herr Doktor Bishof", "LF5");
 
 
         System.out.println(subjectManager.showAllSubjects());
-        subjectManager.addGradeForSpecificSubject("Networking",4.5);
-
-        subjectManager.displayGradesForASubject("Networking");
+        subjectManager.addGradeForSubject("Networking", 4);
 
         System.out.println(subjectManager.displayGradesForASubject("Networking"));
-
-        ;
-
-
-
-
-
-
-
-
-
-
-
 
 
     }

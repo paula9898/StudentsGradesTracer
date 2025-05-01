@@ -14,7 +14,7 @@ public class Subject {
     private  Grade grade;
 
 
-    public ArrayList<Double> grades = new ArrayList<>();
+    public ArrayList<Integer> grades = new ArrayList<>();
 
     public Subject() {}
 
