@@ -83,8 +83,6 @@ public class SubjectManager {
 
     public double calculateAverage(String subjectName) {
 
-        double result = 0;
-
         ArrayList<Integer> grades;
 
         grades = displayGradesForASubject(subjectName);
